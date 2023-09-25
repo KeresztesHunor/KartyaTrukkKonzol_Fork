@@ -1,4 +1,4 @@
-package kartyatrukkkonzolon;
+package modell;
 
 public class Pakli
 {
@@ -7,6 +7,11 @@ public class Pakli
     public Pakli()
     {
         feltolt();
+    }
+    
+    public Lap[] getPakli()
+    {
+        return pakli;
     }
     
     private void feltolt()
@@ -20,18 +25,6 @@ public class Pakli
             for (int e = 0; e < ertekek.length && i < pakli.length; e++)
             {
                 pakli[i++] = new Lap(szin + "_" + ertekek[e]);
-            }
-        }
-    }
-    
-    public void kirak()
-    {
-        for (int i = 1; i < pakli.length; i++)
-        {
-            System.out.printf("%-8s", pakli[i]);
-            if (i % 3 == 0)
-            {
-                System.out.println("");
             }
         }
     }
@@ -68,10 +61,5 @@ public class Pakli
                 break;
         }
         pakli = ujPakli;
-    }
-
-    public void ezVolt()
-    {
-        System.out.println("A választott lap: " + pakli[11]);
     }
 }
